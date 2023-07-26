@@ -63,7 +63,7 @@
         <div class="circle-bg"></div>
 
         <header id="header">
-            <div class="firstview">
+            <section id="area1" class="firstview">
                 <div class="big-view">
                     <div class="mask">
                         <img src="../img/bg/halo-visual1.png" width="100%" alt="">
@@ -77,8 +77,8 @@
                         <img src="../img/bg/halo-visual3.png" width="100%" alt="">
                     </div>
                 </div>
-            </div>
-            <div class="firstview">
+            </section>
+            <section id="area2" class="firstview">
                 <div class="mini-view">
                     <div class="mask">
                         <img src="../img/bg/halo-visual5.png" width="100%" alt="">
@@ -92,7 +92,7 @@
                         <img src="../img/bg/halo-visual4.png" width="100%" alt="">
                     </div>
                 </div>
-            </div>
+            </section>
             
         </header>
 
@@ -156,7 +156,7 @@
                         よくECサイトを利用して化粧品を購入する方<br> ＝ 化粧品を配達してもらうことに抵抗がない人。
                     </p>
                 </section>
-                <section>
+                <section class="concept-area">
                     <h2>CONCEPT</h2>
                     <div class="concept">
                         <h3>TASTE</h3>
@@ -164,15 +164,68 @@
                     </div>
                     <div class="concept">
                         <h3>COLOR</h3>
-                        <p>「木」の暖かさ、モダンでスッキリ。</p>
+                        <div class="data-box space1">
+                            <div class="data">
+                                <p>BASE</p>
+                                <div class="color">
+                                    <div class="color-circle-1"></div>
+                                    <p>#FFFFFF</p>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <p>MAIN</p>
+                                <div class="color">
+                                    <div class="color-circle-2">
+                                        <div class="circle-1"></div>
+                                        <div class="circle-2"></div>
+                                        <div class="circle-3"></div>
+                                        <div class="circle-4"></div>
+                                    </div>
+                                    <p>#E3F8F0<br>#FFDADE<br>#DFF5F9<br>#FFF5E3</p>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <p>ACCENT</p>
+                                <div class="color">
+                                    <div class="color-circle-3"></div>
+                                    <p>#83A4D4<br>↓<br>#B6FBFF</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="concept">
                         <h3>TYPOGRAPHY</h3>
-                        <p>「木」の暖かさ、モダンでスッキリ。</p>
+                        <div class="data-box space1">
+                            <div class="data">
+                                <p>TEXT</p>
+                                <div class="color">
+                                    <p class="example-txt-1">あ<span>ア</span></p>
+                                    <p>ヒラギノ角ゴ　W3/W6</p>
+                                    <p>#000000</p>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <p>英字フォント</p>
+                                <div class="color">
+                                    <p class="example-txt-2">Aa</p>
+                                    <p>Helvetica　Regular</p>
+                                    <p>#000000</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="concept">
                         <h3>PARTSHAPE</h3>
-                        <p>「木」の暖かさ、モダンでスッキリ。</p>
+                        <div class="data-box space2">
+                            <div class="data">
+                                <p>長方形</p>
+                                <div class="square"></div>
+                            </div>
+                            <div class="data">
+                                <p>角丸</p>
+                                <div class="round"></div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section>
@@ -214,6 +267,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- slick -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- scrollify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
 
     <!-- js書き込み -->
 
@@ -229,6 +284,40 @@
             $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
             $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスを除去
             $(".circle-bg").removeClass('circleactive');//丸背景のcircleactiveクラスを除去
+        });
+    </script>
+
+    <!-- 1ページずつscroll -->
+    <script>
+        $.scrollify({
+            section : ".firstview",
+            scrollbars:"false",//スクロールバー表示・非表示設定
+            // interstitialSection : "#header,#footer",
+            easing: "swing", 
+            scrollSpeed: 300, // スクロール時の速度
+
+            //以下、ページネーション設定
+            before:function(i,panels) {
+            var ref = panels[i].attr("data-section-name");
+            $(".pagination .active").removeClass("active");
+            $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
+            },
+            afterRender:function() {
+            var pagination = "<ul class=\"pagination\">";
+            var activeClass = "";
+            $(".firstview").each(function(i) {
+            activeClass = "";
+            if(i===$.scrollify.currentIndex()) {
+            activeClass = "active";
+            }
+            pagination += "<li><a class=\"" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
+            });
+            pagination += "</ul>";
+
+            $("#area1").append(pagination);//はじめのエリアにページネーションを表示
+            $(".pagination a").on("click",$.scrollify.move);
+            }
+
         });
     </script>
     

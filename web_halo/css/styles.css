@@ -288,6 +288,7 @@ html body {
 #wrapper #main #container .Title .Title-txt .work-name h1 {
   font-family: Noto Sans JP;
   font-size: 3.6rem;
+  letter-spacing: 0.15em;
 }
 #wrapper #main #container .Title .Title-txt .time {
   margin-top: 25px;
@@ -389,6 +390,101 @@ html body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+#wrapper #main #container section .concept .space1 {
+  justify-content: space-between;
+}
+#wrapper #main #container section .concept .space2 {
+  justify-content: center;
+  gap: 55px;
+}
+#wrapper #main #container section .concept .data-box {
+  display: flex;
+  padding: 0px 50px;
+  align-self: stretch;
+}
+#wrapper #main #container section .concept .data-box .data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+#wrapper #main #container section .concept .data-box .data .color div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+#wrapper #main #container section .concept .data-box .data .color .color-circle-1 {
+  background: #ffffff;
+}
+#wrapper #main #container section .concept .data-box .data .color .color-circle-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-1 {
+  width: 50%;
+  height: 50%;
+  border-radius: 100% 0 0 0;
+  background: #E3F8F0;
+}
+#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-2 {
+  width: 50%;
+  height: 50%;
+  border-radius: 0 100% 0 0;
+  background: #FFDADE;
+}
+#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-3 {
+  width: 50%;
+  height: 50%;
+  border-radius: 0 0 0 100%;
+  background: #DFF5F9;
+}
+#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-4 {
+  width: 50%;
+  height: 50%;
+  border-radius: 0 0 100% 0;
+  background: #FFF5E3;
+}
+#wrapper #main #container section .concept .data-box .data .color .color-circle-3 {
+  background: linear-gradient(to bottom right, #83A4D4, #B6FBFF);
+}
+#wrapper #main #container section .concept .data-box .data .color p {
+  font-size: 1.4rem;
+  padding-top: 8px;
+  text-align: center;
+  line-height: normal;
+}
+#wrapper #main #container section .concept .data-box .data .color .example-txt-1 {
+  font-size: 6vw;
+  font-weight: normal;
+  font-family: Hiragino Kaku Gothic;
+  line-height: 1;
+  padding-top: 0px;
+}
+#wrapper #main #container section .concept .data-box .data .color .example-txt-1 span {
+  font-weight: bold;
+}
+#wrapper #main #container section .concept .data-box .data .color .example-txt-2 {
+  font-size: 7vw;
+  font-weight: normal;
+  font-family: Helvetica;
+  line-height: 0.86;
+  padding-top: 0px;
+}
+#wrapper #main #container section .concept .data-box .data .color .example-txt-2 span {
+  font-weight: bold;
+}
+#wrapper #main #container section .concept .data-box .data .square {
+  width: 100px;
+  height: 100px;
+  background: #D9D9D9;
+}
+#wrapper #main #container section .concept .data-box .data .round {
+  width: 100px;
+  height: 100px;
+  background: #D9D9D9;
+  border-radius: 0 25px 0 25px;
 }
 #wrapper #footer {
   width: calc(100% - 120px);
