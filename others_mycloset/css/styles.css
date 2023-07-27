@@ -372,7 +372,7 @@ html body {
   padding: 0px 20px;
   border-radius: 10px;
 }
-#wrapper #main #container .base-data .detail-data .pic-icn:last-child {
+#wrapper #main #container .base-data .detail-data .pic-icn:first-child {
   opacity: 0.5;
 }
 #wrapper #main #container .base-data .detail-data .tool {

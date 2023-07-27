@@ -428,7 +428,7 @@ html {
                         background-color: var(--accent-color);
                         padding: 0px 20px;
                         border-radius: 10px;
-                        &:last-child {
+                        &:first-child {
                             opacity: .5;
                         }
                     }

@@ -303,7 +303,7 @@ html body {
 #wrapper #main #container .Title .category-icn {
   color: var(--font-color2);
   background-color: var(--accent-color);
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-radius: 10px;
 }
 #wrapper #main #container .Title .category-icn .category-txt {
@@ -372,7 +372,7 @@ html body {
   padding: 0px 20px;
   border-radius: 10px;
 }
-#wrapper #main #container .base-data .detail-data .pic-icn:first-child {
+#wrapper #main #container .base-data .detail-data .pic-icn:last-child {
   opacity: 0.5;
 }
 #wrapper #main #container .base-data .detail-data .tool {
@@ -381,10 +381,6 @@ html body {
 }
 #wrapper #main #container .base-data .detail-data .tool img {
   width: 25px;
-}
-#wrapper #main #container .base-data .detail-data:last-child {
-  flex-direction: column;
-  align-items: normal;
 }
 #wrapper #main #container section {
   display: flex;
@@ -447,7 +443,8 @@ html body {
   gap: 24px;
 }
 #wrapper #main #container section .concept .data-box .data .typography p {
-  color: #000000;
+  color: #333333;
+  font-family: Marcellus;
 }
 #wrapper #main #container section .concept .data-box .data .color div {
   width: 100px;
@@ -508,7 +505,7 @@ html body {
 #wrapper #main #container section .concept .data-box .data .color .example-txt-2 {
   font-size: 7vw;
   font-weight: normal;
-  font-family: Helvetica;
+  font-family: Marcellus;
   line-height: 0.86;
   padding-top: 0px;
 }

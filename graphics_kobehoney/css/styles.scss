@@ -439,10 +439,10 @@ html {
                             width: 25px;
                         }
                     }
-                    &:last-child {
-                        flex-direction: column;
-                        align-items: normal;
-                    }
+                    // &:last-child {
+                    //     flex-direction: column;
+                    //     align-items: normal;
+                    // }
                 }
             }
             section {
@@ -503,7 +503,8 @@ html {
                             gap: 24px;
                             .typography {
                                 p {
-                                    color: #000000;
+                                    color: #333333;
+                                    font-family: Marcellus;
                                 }
                             }
                             .color {
@@ -570,7 +571,7 @@ html {
                                 .example-txt-2 {
                                     font-size: 7vw;
                                     font-weight: normal;
-                                    font-family: Helvetica;
+                                    font-family: Marcellus;
                                     line-height: 0.86;
                                     padding-top: 0px;
                                     span {
