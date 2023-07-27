@@ -276,6 +276,7 @@ html {
                     min-width: 350px;
                     flex-direction: column;
                     gap: 10px;
+                    
                     .mask {
                         width: 518px;
                         height: 290px;
@@ -291,7 +292,33 @@ html {
                             -webkit-transform: translate(-50%, -50%);
                             -ms-transform: translate(-50%, -50%);
                             transform: translate(-50%, -50%);
+                            transition-duration: .2s;
+                            &:hover {
+                                opacity: .6;
+                                transition: .3s linear;
+                                transition-duration: .2s;
+                                // animation: images_link .3s;
+                            }
+                            // @keyframes images_link {
+                            //     0% {
+                            //       opacity: 1;
+                            //     //   transform: translateX(0px);
+                            //     }
+                            //     40% {
+                            //       opacity: .5;
+                            //     //   transform: translateX(20px);
+                            //     }
+                            //     41% {
+                            //       opacity: .5;
+                            //     //   transform: translateX(-20px);
+                            //     }
+                            //     100% {
+                            //       opacity: 1;
+                            //     //   transform: translateX(0px);
+                            //     }
+                            //   }
                         }
+                        
                     }
                     
                     .work-name {

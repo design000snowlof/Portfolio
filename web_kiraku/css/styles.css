@@ -456,38 +456,13 @@ html body {
   margin: 0 auto;
 }
 #wrapper #main #container section .concept .data-box .data .color .color-circle-1 {
-  background: #ffffff;
+  background: #EFEFED;
 }
 #wrapper #main #container section .concept .data-box .data .color .color-circle-2 {
-  display: flex;
-  flex-wrap: wrap;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-1 {
-  width: 50%;
-  height: 50%;
-  border-radius: 100% 0 0 0;
-  background: #E3F8F0;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-2 {
-  width: 50%;
-  height: 50%;
-  border-radius: 0 100% 0 0;
-  background: #FFDADE;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-3 {
-  width: 50%;
-  height: 50%;
-  border-radius: 0 0 0 100%;
-  background: #DFF5F9;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-4 {
-  width: 50%;
-  height: 50%;
-  border-radius: 0 0 100% 0;
-  background: #FFF5E3;
+  background: linear-gradient(to bottom right, #675531, #FFFFFF);
 }
 #wrapper #main #container section .concept .data-box .data .color .color-circle-3 {
-  background: linear-gradient(to bottom right, #83A4D4, #B6FBFF);
+  background: linear-gradient(to bottom right, #fbe359, #e4601b);
 }
 #wrapper #main #container section .concept .data-box .data .color p {
   font-size: 1.4rem;
@@ -524,7 +499,13 @@ html body {
   width: 100px;
   height: 100px;
   background: #D9D9D9;
-  border-radius: 0 25px 0 25px;
+  border-radius: 5px 25px 5px 25px;
+}
+#wrapper #main #container section .concept .data-box .data .round2 {
+  width: 100px;
+  height: 100px;
+  background: #D9D9D9;
+  border-radius: 50px 0 0 50px;
 }
 #wrapper #footer {
   width: calc(100% - 120px);
