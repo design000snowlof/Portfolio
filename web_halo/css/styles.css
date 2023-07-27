@@ -150,27 +150,25 @@ html body {
   font-weight: normal;
 }
 #wrapper #header {
-  width: calc(100vw - 120px);
   height: auto;
-  margin: 0 0 0 auto;
 }
-#wrapper #header .firstview {
+#wrapper .firstview {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
 }
-#wrapper #header .firstview .big-view {
+#wrapper .firstview .big-view {
   width: 60%;
   height: 100vh;
 }
-#wrapper #header .firstview .big-view .mask {
+#wrapper .firstview .big-view .mask {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-#wrapper #header .firstview .big-view .mask img {
+#wrapper .firstview .big-view .mask img {
   width: auto;
   height: 100%;
   position: absolute;
@@ -178,20 +176,20 @@ html body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#wrapper #header .firstview .mini-view {
+#wrapper .firstview .mini-view {
   width: 40%;
   height: 100vh;
 }
-#wrapper #header .firstview .mini-view img {
+#wrapper .firstview .mini-view img {
   height: 50vh;
 }
-#wrapper #header .firstview .mini-view .mask {
+#wrapper .firstview .mini-view .mask {
   width: 100%;
   height: 50%;
   position: relative;
   overflow: hidden;
 }
-#wrapper #header .firstview .mini-view .mask img {
+#wrapper .firstview .mini-view .mask img {
   width: auto;
   height: 100%;
   position: absolute;
@@ -203,9 +201,6 @@ html body {
   width: calc(100vw - 120px);
   height: auto;
   margin: 0 0 0 auto;
-  position: relative; /*position stickyの基点にするため relativeをかける*/
-  display: flex; /*左エリア、右エリア横並び指定*/
-  flex-wrap: wrap; /*ボックスの折り返し可*/
   /*左と右を囲う全体のエリア*/
   /*左エリア*/
   /*右エリア*/
@@ -222,6 +217,48 @@ html body {
   /*横45.4%　縦を100vhにする*/
   width: 45.4%;
   height: 100vh;
+}
+#wrapper #main #fixed-area .slider-area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+}
+#wrapper #main #fixed-area .slider-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  animation: slideShow 30s linear infinite 0s;
+}
+#wrapper #main #fixed-area .slider-item:nth-child(2) {
+  animation-delay: 10s;
+}
+#wrapper #main #fixed-area .slider-item:nth-child(3) {
+  animation-delay: 20s;
+}
+#wrapper #main #fixed-area .slider-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 #wrapper #main #fixed-area .mask {
   width: 100%;
@@ -240,7 +277,7 @@ html body {
 #wrapper #main #container {
   width: 54.6%;
   display: flex;
-  padding: 200px 100px;
+  padding: 250px 100px;
   flex-direction: column;
   align-items: center;
   gap: 300px;
@@ -357,14 +394,14 @@ html body {
   align-self: stretch;
 }
 #wrapper #main #container section h2 {
-  font-family: "Helvetica Neue";
+  font-family: Helvetica Neue;
   font-size: 3.2rem;
   letter-spacing: 0.15em;
 }
 #wrapper #main #container section h3 {
   width: 100%;
   align-items: flex-start;
-  font-family: "Helvetica Neue";
+  font-family: Helvetica Neue;
   color: var(--font-color2);
   background-color: var(--accent-color);
   padding: 7px 20px;
@@ -378,7 +415,7 @@ html body {
 }
 #wrapper #main #container section p {
   color: var(--font-color4);
-  font-family: "Noto Sans JP";
+  font-family: Noto Sans JP;
   line-height: 35px;
 }
 #wrapper #main #container section .target {
@@ -408,6 +445,9 @@ html body {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+}
+#wrapper #main #container section .concept .data-box .data .typography p {
+  color: #000000;
 }
 #wrapper #main #container section .concept .data-box .data .color div {
   width: 100px;
@@ -489,10 +529,12 @@ html body {
 #wrapper #footer {
   width: calc(100% - 120px);
   height: auto;
-  margin: 0 0 0 auto;
+  margin-top: -230px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: absolute;
+  right: 0;
 }
 #wrapper #footer #page-top {
   display: flex;

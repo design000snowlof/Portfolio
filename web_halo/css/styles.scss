@@ -176,85 +176,16 @@ html {
     }
 
     #header {
-        width: calc(100vw - 120px);
         height: auto;
-        margin: 0 0 0 auto;
-        // position: relative;
-        
-        .firstview {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            flex-wrap: wrap;
-            // position: absolute;
-            .big-view {
-                width: 60%;
-                height: 100vh;
-                .mask {
-                    width: 100%;
-                    height: 100%;
-                    position: relative;
-                    overflow: hidden;
-                    img {
-                        width: auto;
-                        height: 100%;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        -webkit-transform: translate(-50%, -50%);
-                        -ms-transform: translate(-50%, -50%);
-                        transform: translate(-50%, -50%);
-                    }
-                }
-            }
-            .mini-view {
-                width: calc(100% - 60%);
-                height: 100vh;
-                img {
-                    height: 50vh;
-                }
-                .mask {
-                    width: 100%;
-                    height: 50%;
-                    position: relative;
-                    overflow: hidden;
-                    img {
-                        width: auto;
-                        height: 100%;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        -webkit-transform: translate(-50%, -50%);
-                        -ms-transform: translate(-50%, -50%);
-                        transform: translate(-50%, -50%);
-                    }
-                }
-            }
-        }   
     }
 
-    #main {
-        width: calc(100vw - 120px);
-        height: auto;
-        margin: 0 0 0 auto;
-        position: relative;/*position stickyの基点にするため relativeをかける*/
-        display: flex;/*左エリア、右エリア横並び指定*/
-        flex-wrap: wrap;/*ボックスの折り返し可*/
-        /*左と右を囲う全体のエリア*/
-        #wrapper-fixd {
-            position: relative;/*position stickyの基点にするため relativeをかける*/
-            display: flex;/*左エリア、右エリア横並び指定*/
-            flex-wrap: wrap;/*ボックスの折り返し可*/
-        }
-
-        /*左エリア*/
-        #fixed-area {
-            /*左固定記述*/
-            position: -webkit-sticky;/*Safari用*/
-            position: sticky;
-            top:0;
-            /*横45.4%　縦を100vhにする*/
-            width: 45.4%;
+    .firstview {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        .big-view {
+            width: 60%;
             height: 100vh;
             .mask {
                 width: 100%;
@@ -273,12 +204,139 @@ html {
                 }
             }
         }
+        .mini-view {
+            width: calc(100% - 60%);
+            height: 100vh;
+            img {
+                height: 50vh;
+            }
+            .mask {
+                width: 100%;
+                height: 50%;
+                position: relative;
+                overflow: hidden;
+                img {
+                    width: auto;
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }   
+
+    #main {
+        width: calc(100vw - 120px);
+        height: auto;
+        margin: 0 0 0 auto;
+        /*左と右を囲う全体のエリア*/
+        #wrapper-fixd {
+            position: relative;/*position stickyの基点にするため relativeをかける*/
+            display: flex;/*左エリア、右エリア横並び指定*/
+            flex-wrap: wrap;/*ボックスの折り返し可*/
+        }
+
+        /*左エリア*/
+        #fixed-area {
+            /*左固定記述*/
+            position: -webkit-sticky;/*Safari用*/
+            position: sticky;
+            top:0;
+            /*横45.4%　縦を100vhにする*/
+            width: 45.4%;
+            height: 100vh;
+            // display: flex;
+	        // align-items: center;
+            .slider-area {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                background: #fff;
+            }
+            
+            .slider-item {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+                z-index: 0;
+                animation: slideShow 30s linear infinite 0s;
+            }
+            
+            .slider-item:nth-child(2) {
+                animation-delay: 10s;
+            }
+            
+            .slider-item:nth-child(3) {
+                animation-delay: 20s;
+            }
+            
+            .slider-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            @keyframes slideShow {
+                0%{
+                    opacity: 0;
+                }
+                8%{
+                opacity: 1;
+                }
+                33%{
+                opacity: 1
+                }
+                41%{
+                opacity: 0;
+                }
+                100%{
+                opacity: 0;
+                }
+            }
+            .mask {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                img {
+                    width: auto;
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+                
+            }
+            // div {
+            //     display: block;
+            //     margin: auto;
+            //     visibility: hidden;
+            //     position: absolute;
+            //     top: 0;
+            //     bottom: 0;
+            //     /* フェード速度 */
+            //     transition: .8s;
+            //     opacity: 0;
+            //     &:first-child, .active {
+            //         visibility: visible;
+            //         opacity: 1;
+            //     }
+            // }
+            
+        }
 
         /*右エリア*/
         #container {
             width: calc(100% - 45.4%);
             display: flex;
-            padding: 200px 100px;
+            padding: 250px 100px;
             flex-direction: column;
             align-items: center;
             gap: 300px;
@@ -394,14 +452,14 @@ html {
                 gap: 50px;
                 align-self: stretch;
                 h2 {
-                    font-family: 'Helvetica Neue';
+                    font-family: Helvetica Neue;
                     font-size: 3.2rem;
                     letter-spacing: 0.15em;
                 }
                 h3 {
                     width: 100%;
                     align-items: flex-start;
-                    font-family: 'Helvetica Neue';
+                    font-family: Helvetica Neue;
                     color: var(--font-color2);
                     background-color: var(--accent-color);
                     padding: 7px 20px;
@@ -415,7 +473,7 @@ html {
                 }
                 p {
                     color: var(--font-color4);
-                    font-family: 'Noto Sans JP';
+                    font-family: Noto Sans JP;
                     line-height: 35px;
                 }
                 .target {
@@ -443,6 +501,11 @@ html {
                             flex-direction: column;
                             align-items: center;
                             gap: 24px;
+                            .typography {
+                                p {
+                                    color: #000000;
+                                }
+                            }
                             .color {
                                 div {
                                     width: 100px;
@@ -536,10 +599,14 @@ html {
     #footer {
         width: calc(100% - 120px);
         height: auto;
-        margin:0 0 0 auto;
+        // margin:0 0 0 auto;
+        margin-top: -230px;
         display: flex;
         flex-direction: column;
         gap: 30px;
+        // z-index: 2000;
+        position: absolute;
+        right: 0;
         #page-top {
             // width: 100px;
             display: flex;
