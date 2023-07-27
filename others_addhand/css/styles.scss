@@ -439,9 +439,28 @@ html {
                             width: 25px;
                         }
                     }
+                    &:nth-child(4) {
+                        flex-direction: column;
+                        align-items: normal;
+                    }
                     &:last-child {
                         flex-direction: column;
                         align-items: normal;
+                        border: none;
+                    }
+                    .sheet {
+                        width: 350px;
+                        border-radius: 10px;
+                        // margin-bottom: 3px;
+                        transition-duration: .2s;
+                        &:hover {
+                            opacity: .5;
+                            transition: .3s linear;
+                            transition-duration: .2s;
+                        }
+                    }
+                    a {
+                        width: fit-content;
                     }
                 }
             }
@@ -503,7 +522,8 @@ html {
                             gap: 24px;
                             .typography {
                                 p {
-                                    color: #000000;
+                                    color: #333;
+                                    font-family: Noto Sans JP;
                                 }
                             }
                             .color {
@@ -514,39 +534,14 @@ html {
                                     margin: 0 auto;
                                 }
                                 .color-circle-1 {
-                                    background: #ffffff;
+                                    background: #EFECE7;
                                 }
                                 .color-circle-2 {
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    .circle-1 {
-                                        width: 50%;
-                                        height: 50%;
-                                        border-radius: 100% 0 0 0;
-                                        background: #E3F8F0;
-                                    }
-                                    .circle-2 {
-                                        width: 50%;
-                                        height: 50%;
-                                        border-radius: 0 100% 0 0;
-                                        background: #FFDADE;
-                                    }
-                                    .circle-3 {
-                                        width: 50%;
-                                        height: 50%;
-                                        border-radius: 0 0 0 100%;
-                                        background: #DFF5F9;
-                                    }
-                                    .circle-4 {
-                                        width: 50%;
-                                        height: 50%;
-                                        border-radius: 0 0 100% 0;
-                                        background: #FFF5E3;
-                                    }
+                                    background: #EFBD3B;
                                 }
                                 
                                 .color-circle-3 {
-                                    background: linear-gradient(to bottom right, #83A4D4, #B6FBFF);;
+                                    background: #A9C66C;
                                 }
                                 
                                 
@@ -560,9 +555,9 @@ html {
                                 .example-txt-1 {
                                     font-size: 6vw;
                                     font-weight: normal;
-                                    font-family: Hiragino Kaku Gothic;
+                                    font-family: Noto Sans JP;
                                     line-height: 1;
-                                    padding-top: 0px;
+                                    margin-top: -25px;
                                     span {
                                         font-weight: bold;
                                     }

@@ -382,9 +382,28 @@ html body {
 #wrapper #main #container .base-data .detail-data .tool img {
   width: 25px;
 }
+#wrapper #main #container .base-data .detail-data:nth-child(4) {
+  flex-direction: column;
+  align-items: normal;
+}
 #wrapper #main #container .base-data .detail-data:last-child {
   flex-direction: column;
   align-items: normal;
+  border: none;
+}
+#wrapper #main #container .base-data .detail-data .sheet {
+  width: 350px;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+}
+#wrapper #main #container .base-data .detail-data .sheet:hover {
+  opacity: 0.5;
+  transition: 0.3s linear;
+  transition-duration: 0.2s;
+}
+#wrapper #main #container .base-data .detail-data a {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #wrapper #main #container section {
   display: flex;
@@ -447,7 +466,8 @@ html body {
   gap: 24px;
 }
 #wrapper #main #container section .concept .data-box .data .typography p {
-  color: #000000;
+  color: #333;
+  font-family: Noto Sans JP;
 }
 #wrapper #main #container section .concept .data-box .data .color div {
   width: 100px;
@@ -456,38 +476,13 @@ html body {
   margin: 0 auto;
 }
 #wrapper #main #container section .concept .data-box .data .color .color-circle-1 {
-  background: #ffffff;
+  background: #EFECE7;
 }
 #wrapper #main #container section .concept .data-box .data .color .color-circle-2 {
-  display: flex;
-  flex-wrap: wrap;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-1 {
-  width: 50%;
-  height: 50%;
-  border-radius: 100% 0 0 0;
-  background: #E3F8F0;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-2 {
-  width: 50%;
-  height: 50%;
-  border-radius: 0 100% 0 0;
-  background: #FFDADE;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-3 {
-  width: 50%;
-  height: 50%;
-  border-radius: 0 0 0 100%;
-  background: #DFF5F9;
-}
-#wrapper #main #container section .concept .data-box .data .color .color-circle-2 .circle-4 {
-  width: 50%;
-  height: 50%;
-  border-radius: 0 0 100% 0;
-  background: #FFF5E3;
+  background: #EFBD3B;
 }
 #wrapper #main #container section .concept .data-box .data .color .color-circle-3 {
-  background: linear-gradient(to bottom right, #83A4D4, #B6FBFF);
+  background: #A9C66C;
 }
 #wrapper #main #container section .concept .data-box .data .color p {
   font-size: 1.4rem;
@@ -498,9 +493,9 @@ html body {
 #wrapper #main #container section .concept .data-box .data .color .example-txt-1 {
   font-size: 6vw;
   font-weight: normal;
-  font-family: Hiragino Kaku Gothic;
+  font-family: Noto Sans JP;
   line-height: 1;
-  padding-top: 0px;
+  margin-top: -25px;
 }
 #wrapper #main #container section .concept .data-box .data .color .example-txt-1 span {
   font-weight: bold;
