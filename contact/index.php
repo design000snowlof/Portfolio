@@ -1,5 +1,10 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <title>sayuki's portfolio.</title>
 </head>
+
 <body>
     <div id="wrapper">
 
@@ -48,16 +54,16 @@
         </div>
         <nav id="g-nav">
             <ul>
-            <li class="main-nav"><a href="../index.html#">TOP</a></li> 
-            <li class="main-nav"><a href="../works/index.html#">WORKS</a>
-                <ul>
-                    <li class="mini-nav"><a href="../works/index.html#web">WEB</a></li>
-                    <li class="mini-nav"><a href="../works/index.html#graphics">GRAPHICS</a></li>
-                    <li class="mini-nav"><a href="../works/index.html#others">OTHERS</a></li>
-                </ul>
-            </li> 
-            <li class="main-nav"><a href="../profile/index.html#">PROFILE</a></li> 
-            <li class="main-nav"><a href="#">CONTACT</a></li> 
+                <li class="main-nav"><a href="../index.html#">TOP</a></li>
+                <li class="main-nav"><a href="../works/index.html#">WORKS</a>
+                    <ul>
+                        <li class="mini-nav"><a href="../works/index.html#web">WEB</a></li>
+                        <li class="mini-nav"><a href="../works/index.html#graphics">GRAPHICS</a></li>
+                        <li class="mini-nav"><a href="../works/index.html#others">OTHERS</a></li>
+                    </ul>
+                </li>
+                <li class="main-nav"><a href="../profile/index.html#">PROFILE</a></li>
+                <li class="main-nav"><a href="#">CONTACT</a></li>
             </ul>
         </nav>
         <div class="circle-bg"></div>
@@ -69,14 +75,14 @@
                     <img src="../img/icn/contact.png" width="100%" alt="">
                 </div>
             </div>
-            
+
         </header>
 
         <div id="main">
             <div class="inner">
-                <h2>お気軽にお問い合わせください。<br>
-                    お問い合わせ内容を確認した後、<br>
-                    お返事をお送りいたします。</h2>
+                <h2>お気軽にお問い合わせください。<br> お問い合わせ内容を確認した後、
+                    <br> お返事をお送りいたします。
+                </h2>
                 <!-- <form action="">
 
                     <input type="text" placeholder="お名前" name="name" required>
@@ -88,25 +94,48 @@
                     <input type="submit" value="送信">
                     
                 </form> -->
+                <form action="./new.php" method="post">
+                    <input type="text" name="name">
+                    <?php if (isset($_SESSION['error_name'])) : ?>
+                        <?php unset($_SESSION['error_name']); ?>
+                        <p>名前を入力してください。</p>
+                    <?php endif; ?>
+
+                    <input type="text" name="email">
+                    <?php if (isset($_SESSION['error_email'])) : ?>
+                        <?php unset($_SESSION['error_email']); ?>
+                        <p>メールアドレスを入力してください。</p>
+                    <?php endif; ?>
+                    <textarea type="text" name="message"></textarea>
+                    <?php if (isset($_SESSION['error_message'])) : ?>
+                        <?php unset($_SESSION['error_message']); ?>
+                        <p>お問い合わせ内容を入力してください。</p>
+                    <?php endif; ?>
+
+                    <button id="submit" type="submit">
+                        送信
+                    </button>
+                </form>
+
                 <form id="contact">
                     <div class="container">
-                      <!-- <div class="head"> -->
+                        <!-- <div class="head"> -->
                         <!-- <h2>Say Hello</h2> -->
-                      <!-- </div> -->
-                      <input type="text" name="name" placeholder="お名前" /><br />
-                      <input  type="email" name="email" placeholder="メールアドレス" /><br />
-                      <textarea type="text" name="message" placeholder="お問い合わせ内容"></textarea><br />
-                      <div class="message">Message Sent</div>
-                      <button id="submit" type="submit">
+                        <!-- </div> -->
+                        <input type="text" name="name" placeholder="お名前" /><br />
+                        <input type="email" name="email" placeholder="メールアドレス" /><br />
+                        <textarea type="text" name="message" placeholder="お問い合わせ内容"></textarea><br />
+                        <div class="message">Message Sent</div>
+                        <button id="submit" type="submit">
                         送信
                       </button>
                     </div>
-                  </form>
+                </form>
             </div>
         </div>
 
         <footer id="footer">
-            
+
             <div id="page-top">
                 <a href="#">
                     <div class="arrow-top">
@@ -117,14 +146,14 @@
                     <p>PAGE TOP</p>
                 </a>
             </div>
-           
+
             <div id="copyright">
                 <p>© 2023 YUI SAYUKI</p>
             </div>
         </footer>
 
     </div>
-    
+
     <!-- js読み込み -->
 
     <!-- jquery -->
@@ -136,16 +165,16 @@
 
     <!-- ナビゲーション -->
     <script>
-        $("#sidebar").click(function () {//ボタンがクリックされたら
-	        $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-            $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-            $(".circle-bg").toggleClass('circleactive');//丸背景にcircleactiveクラスを付与
+        $("#sidebar").click(function() { //ボタンがクリックされたら
+            $(this).toggleClass('active'); //ボタン自身に activeクラスを付与し
+            $("#g-nav").toggleClass('panelactive'); //ナビゲーションにpanelactiveクラスを付与
+            $(".circle-bg").toggleClass('circleactive'); //丸背景にcircleactiveクラスを付与
         });
 
-        $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
-            $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
-            $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスを除去
-            $(".circle-bg").removeClass('circleactive');//丸背景のcircleactiveクラスを除去
+        $("#g-nav a").click(function() { //ナビゲーションのリンクがクリックされたら
+            $(".openbtn").removeClass('active'); //ボタンの activeクラスを除去し
+            $("#g-nav").removeClass('panelactive'); //ナビゲーションのpanelactiveクラスを除去
+            $(".circle-bg").removeClass('circleactive'); //丸背景のcircleactiveクラスを除去
         });
     </script>
 
@@ -171,14 +200,15 @@
                 },
                 // submit handler
                 submitHandler: function(form) {
-                //form.submit();
-                $(".message").show();
-                $(".message").fadeOut(4500);
+                    //form.submit();
+                    $(".message").show();
+                    $(".message").fadeOut(4500);
                 }
             });
         });
     </script>
 
-    
+
 </body>
+
 </html>
