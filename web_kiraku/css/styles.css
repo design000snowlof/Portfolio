@@ -290,7 +290,7 @@ html body {
   align-self: stretch;
 }
 #wrapper #main #container #preface .summary {
-  font-family: "Noto Sans JP";
+  font-family: Noto Sans JP;
   line-height: 35px;
 }
 #wrapper #main #container .Title {

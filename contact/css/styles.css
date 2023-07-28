@@ -89,7 +89,7 @@ html body {
   display: block; /*クラスが付与されたら出現*/
 }
 #wrapper #g-nav ul {
-  opacity: 0; /*はじめは透過0*/
+  visibility: hidden;
   padding-left: 220px;
   bottom: 100px;
   /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
@@ -100,21 +100,21 @@ html body {
   padding-bottom: 50px;
 }
 #wrapper #g-nav.panelactive ul {
-  opacity: 1;
+  visibility: visible;
 }
 #wrapper #g-nav.panelactive ul li {
   animation-name: gnaviAnime;
   animation-duration: 1s;
   animation-delay: 0.2s; /*0.2 秒遅らせて出現*/
   animation-fill-mode: forwards;
-  opacity: 0;
+  visibility: hidden;
 }
 @keyframes gnaviAnime {
   0% {
-    opacity: 0;
+    visibility: hidden;
   }
   100% {
-    opacity: 1;
+    visibility: visible;
   }
 }
 #wrapper #g-nav .main-nav {
@@ -185,6 +185,7 @@ html body {
   height: auto;
   margin: 0 0 0 auto;
   padding: 150px 0px;
+  /* media queries */
 }
 #wrapper #main h2 {
   color: var(--font-color4);
@@ -194,6 +195,106 @@ html body {
   font-weight: bold;
   line-height: 40px;
   letter-spacing: 0.15em;
+  margin-bottom: 100px;
+}
+#wrapper #main .container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+#wrapper #main input {
+  margin-bottom: 40px;
+}
+#wrapper #main textarea {
+  height: 300px;
+  margin-bottom: 20px;
+}
+#wrapper #main input:first-of-type {
+  margin-top: 20px;
+}
+#wrapper #main input, #wrapper #main textarea {
+  font-size: 1.6rem;
+  padding: 30px 50px;
+  font-family: Noto Sans JP;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--bg-color50);
+  background: var(--bg-color50);
+  border-radius: 10px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+#wrapper #main ::-webkit-input-placeholder {
+  color: var(--font-color4);
+}
+#wrapper #main :-moz-placeholder {
+  color: var(--font-color4);
+}
+#wrapper #main ::-moz-placeholder {
+  color: var(--font-color4);
+}
+#wrapper #main :-ms-input-placeholder {
+  color: var(--font-color4);
+}
+#wrapper #main button {
+  margin-top: 50px;
+  margin-left: 43%;
+  background-color: var(--accent-color);
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid var(--accent-color);
+  transition: 0.5s;
+  display: inline-block;
+  cursor: pointer;
+  width: 15%;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+}
+#wrapper #main button:hover, #wrapper #main .button:hover {
+  background: var(--font-color2);
+  color: var(--accent-color);
+}
+#wrapper #main label.error {
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: 1em;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #d89c9c;
+  width: 80%;
+  margin: auto;
+  color: #FAFAFA;
+  border-radius: 6px;
+}
+@media (max-width: 700px) {
+  #wrapper #main label.error {
+    width: 90%;
+  }
+  #wrapper #main input, #wrapper #main textarea {
+    width: 90%;
+  }
+  #wrapper #main button {
+    width: 90%;
+  }
+  #wrapper #main body {
+    padding-top: 10px;
+  }
+}
+#wrapper #main .message {
+  font-family: Noto Sans JP;
+  font-size: 1.1em;
+  display: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #2ABCA7;
+  width: 80%;
+  margin: auto;
+  color: #FAFAFA;
+  border-radius: 6px;
 }
 #wrapper #footer {
   width: calc(100% - 120px);
@@ -202,6 +303,8 @@ html body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: absolute;
+  right: 0;
 }
 #wrapper #footer #page-top {
   display: flex;

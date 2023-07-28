@@ -10,7 +10,7 @@
     --bg-color50: #ffffff80;
     --bg-color: #FAF7F2;
 
-    --border-color: #737373;
+    --border-color: #D5D2CE;
 
     --font-color1: #333;
     --font-color2: #fff;
@@ -48,7 +48,6 @@ html {
         align-items: center;
         z-index: 15000;
 
-        border: 1px solid var(--border-color);
         background-color: var(--bg-color);
         background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
     }
@@ -101,7 +100,8 @@ html {
 
     /*ナビゲーション*/
     #g-nav ul {
-        opacity: 0;/*はじめは透過0*/
+        // opacity: 0;/*はじめは透過0*/
+        visibility: hidden;
         padding-left: 220px;
         bottom: 100px;
         /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
@@ -117,7 +117,8 @@ html {
 
     /*背景が出現後にナビゲーションを表示*/
     #g-nav.panelactive ul {
-        opacity:1;
+        // opacity:1;
+        visibility: visible;
     }
 
     /* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
@@ -126,14 +127,17 @@ html {
     animation-duration:1s;
     animation-delay:.2s;/*0.2 秒遅らせて出現*/
     animation-fill-mode:forwards;
-    opacity:0;
+    // opacity:0;
+    visibility: hidden;
     }
     @keyframes gnaviAnime{
     0% {
-    opacity: 0;
+    // opacity: 0;
+    visibility: hidden;
     }
     100% {
-    opacity: 1;
+    // opacity: 1;
+    visibility: visible;
     }
     }
 
@@ -177,7 +181,7 @@ html {
 
     #header {
         width: calc(100vw - 120px);
-        height: 100vh;
+        height: 50vh;
         margin: 0 0 0 auto;
         position: relative;
 
@@ -254,7 +258,7 @@ html {
             /*横半分50%にする*/
             width: calc(100% - 45.4%);
             display: flex;
-            padding: 200px 0px;
+            padding: 250px 100px;
             flex-direction: column;
             align-items: center;
             gap: 300px;
@@ -300,6 +304,40 @@ html {
                     letter-spacing: 0.15em;
                 }
             }
+            .base-data {
+                // width: 400px;
+                // margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                align-self: stretch;
+                .detail-data {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-self: stretch;
+                    border-bottom: 1px solid var(--border-color);
+                    p {
+                        font-family: Noto Sans JP;
+                        font-size: 1.4rem;
+                        line-height: 35px;
+                    }
+                    // &:nth-child(2) {
+                    //     justify-content: flex-start;
+                    //     gap: 20px;
+                    // }
+                    
+                    img {
+                        width: 50px;
+                        padding-bottom: 5px;
+                    }
+                    
+                    // &:last-child {
+                    //     flex-direction: column;
+                    //     align-items: normal;
+                    // }
+                }
+            }
         }
 
         /*＝＝＝＝＝＝＝＝＝＝＝768px以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
@@ -322,9 +360,12 @@ html {
         width: calc(100% - 120px);
         height: auto;
         margin:0 0 0 auto;
+        margin-top: -230px;
         display: flex;
         flex-direction: column;
         gap: 30px;
+        position: absolute;
+        right: 0;
         #page-top {
             // width: 100px;
             display: flex;

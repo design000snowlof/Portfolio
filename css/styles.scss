@@ -100,7 +100,8 @@ html {
 
     /*ナビゲーション*/
     #g-nav ul {
-        opacity: 0;/*はじめは透過0*/
+        // opacity: 0;/*はじめは透過0*/
+        visibility: hidden;
         padding-left: 220px;
         bottom: 100px;
         /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
@@ -116,7 +117,8 @@ html {
 
     /*背景が出現後にナビゲーションを表示*/
     #g-nav.panelactive ul {
-        opacity:1;
+        // opacity:1;
+        visibility: visible;
     }
 
     /* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
@@ -125,14 +127,17 @@ html {
     animation-duration:1s;
     animation-delay:.2s;/*0.2 秒遅らせて出現*/
     animation-fill-mode:forwards;
-    opacity:0;
+    // opacity:0;
+    visibility: hidden;
     }
     @keyframes gnaviAnime{
     0% {
-    opacity: 0;
+    // opacity: 0;
+    visibility: hidden;
     }
     100% {
-    opacity: 1;
+    // opacity: 1;
+    visibility: visible;
     }
     }
 
@@ -179,18 +184,70 @@ html {
         height: 100vh;
         margin: 0 0 0 auto;
         position: relative;
+        display: flex;
 
-        .pare {
-            width: 100%;
+        .slider-area {
+            position: relative;
+            width: 60%;
+            height: 100vh;
+            background: #fff;
+        }
+        
+        .slider-item {
             position: absolute;
-            .box {
-                width: 38%;
-                height: 100vh;
-                overflow: hidden;
-                margin: 0 0 0 auto;
-                // position: absolute;
-                // z-index: 1;
+            inset: 0;
+            opacity: 0;
+            z-index: 0;
+            animation: slideShow 30s linear infinite 0s;
+        }
+        
+        .slider-item:nth-child(2) {
+            animation-delay: 10s;
+        }
+        
+        .slider-item:nth-child(3) {
+            animation-delay: 20s;
+        }
+        
+        .slider-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @keyframes slideShow {
+            0%{
+                opacity: 0;
             }
+            8%{
+            opacity: 1;
+            }
+            33%{
+            opacity: 1
+            }
+            41%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 0;
+            }
+        }
+        .mask {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            img {
+                width: auto;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
         }
         
         .Title {
@@ -200,7 +257,7 @@ html {
             // position: relative;
             padding: 0px 100px;
             align-items: center;
-            z-index: 50;
+            // z-index: 50;
             background-color: var(--bg-color);
             h1 {
                 font-family: 'Helvetica Neue', sans-serif;
@@ -210,67 +267,13 @@ html {
                 letter-spacing: 0.15em;
             }
         }
-
-        .slideshow {
-            position:relative;
-            z-index: 1;
-            /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
-            height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
-        }
-
-        /*　スライド画像　*/
-        .slider-item01 {
-            background:url(../img/bg_slide1.png,)
-        }
-        .slider-item02 {
-            background:url(../img/bg_slide2.png)
-        }
-        .slider-item03 {
-            background:url(../img/bg_slide1.png)
-        }
         
-        .slider-item {
-            width: 550px;
-            height:100vh;
-            background-repeat: no-repeat;
-            background-position: center;/*背景画像の位置を中央に*/
-            background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
-            // background-size: contain;
-        }
-        
-        /*ドットナビゲーションの設定*/
-        
-        .slick-dots {
-            position: relative;
-            z-index: 3;
-            text-align:center;
-            margin:-50px 0 0 0;
-        }
-        
-        .slick-dots li {
-            display:inline-block;
-            margin:0 5px;
-        }
-        
-        .slick-dots button {
-            color: transparent;
-            outline: none;
-            width:8px;/*ドットボタンのサイズ*/
-            height:8px;/*ドットボタンのサイズ*/
-            display:block;
-            border-radius:50%;
-            background:#ccc;/*ドットボタンの色*/
-        }
-        
-        .slick-dots .slick-active button{
-            background:#333;/*ドットボタンの現在地表示の色*/
-        }
     }
     #main {
         width: calc(100vw - 120px);
         height: auto;
         margin: 0 0 0 auto;
-        position: relative;
+        // position: relative;
         z-index: 100;
         padding: 350px 0px 100px;
         h2 {
@@ -360,6 +363,7 @@ html {
                 gap: 5px;
                 border-radius: 10px;
                 background: var(--accent-color);
+                transition-duration: .2s;
                 .btn-txt {
                     color: var(--font-color2);
                     text-align: center;
@@ -373,7 +377,12 @@ html {
                     width: 24px;
                     height: 24px;
                 }
+                &:hover {
+                    opacity: .5;
+                    transition-duration: .2s;
+                }
             }
+            
             .page-jump {
                 display: flex;
                 width: 290px;
@@ -384,6 +393,7 @@ html {
                 gap: 16px;
                 border-radius: 25px 25px 25px 0px;
                 background: var(--accent-color);
+                transition-duration: .2s;
                 img {
                     width: 100px;
                 }
@@ -409,6 +419,10 @@ html {
                         width: 24px;
                         height: 24px;
                     }
+                }
+                &:hover {
+                    opacity: .5;
+                    transition-duration: .2s;
                 }
             }
         }

@@ -10,7 +10,7 @@
   --accent-color: #AFB6AE;
   --bg-color50: #ffffff80;
   --bg-color: #FAF7F2;
-  --border-color: #737373;
+  --border-color: #D5D2CE;
   --font-color1: #333;
   --font-color2: #fff;
   --font-color3: #737373;
@@ -47,7 +47,6 @@ html body {
   justify-content: center;
   align-items: center;
   z-index: 15000;
-  border: 1px solid var(--border-color);
   background-color: var(--bg-color);
   background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
 }
@@ -90,7 +89,7 @@ html body {
   display: block; /*クラスが付与されたら出現*/
 }
 #wrapper #g-nav ul {
-  opacity: 0; /*はじめは透過0*/
+  visibility: hidden;
   padding-left: 220px;
   bottom: 100px;
   /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
@@ -101,21 +100,21 @@ html body {
   padding-bottom: 50px;
 }
 #wrapper #g-nav.panelactive ul {
-  opacity: 1;
+  visibility: visible;
 }
 #wrapper #g-nav.panelactive ul li {
   animation-name: gnaviAnime;
   animation-duration: 1s;
   animation-delay: 0.2s; /*0.2 秒遅らせて出現*/
   animation-fill-mode: forwards;
-  opacity: 0;
+  visibility: hidden;
 }
 @keyframes gnaviAnime {
   0% {
-    opacity: 0;
+    visibility: hidden;
   }
   100% {
-    opacity: 1;
+    visibility: visible;
   }
 }
 #wrapper #g-nav .main-nav {
@@ -151,7 +150,7 @@ html body {
 }
 #wrapper #header {
   width: calc(100vw - 120px);
-  height: 100vh;
+  height: 50vh;
   margin: 0 0 0 auto;
   position: relative;
 }
@@ -224,7 +223,7 @@ html body {
   /*横半分50%にする*/
   width: 54.6%;
   display: flex;
-  padding: 200px 0px;
+  padding: 250px 100px;
   flex-direction: column;
   align-items: center;
   gap: 300px;
@@ -271,6 +270,28 @@ html body {
   line-height: 35px;
   letter-spacing: 0.15em;
 }
+#wrapper #main #container .base-data {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-self: stretch;
+}
+#wrapper #main #container .base-data .detail-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-bottom: 1px solid var(--border-color);
+}
+#wrapper #main #container .base-data .detail-data p {
+  font-family: Noto Sans JP;
+  font-size: 1.4rem;
+  line-height: 35px;
+}
+#wrapper #main #container .base-data .detail-data img {
+  width: 50px;
+  padding-bottom: 5px;
+}
 @media screen and (max-width: 768px) {
   #wrapper #main #wrapper-fixd {
     display: block; /*display:flex;を解除*/
@@ -288,9 +309,12 @@ html body {
   width: calc(100% - 120px);
   height: auto;
   margin: 0 0 0 auto;
+  margin-top: -230px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: absolute;
+  right: 0;
 }
 #wrapper #footer #page-top {
   display: flex;

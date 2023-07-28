@@ -63,36 +63,19 @@
         <div class="circle-bg"></div>
 
         <header id="header">
-            <div class="pare">
-                <div class="box">
-                    <img src="img/bg/slide1.png" height="100%" alt="">
-                </div>
-            </div>
-            
             <div class="Title">
                 <h1>SAYUKI’s<br>PORTFOLIO.</h1>
             </div>
-            <div id="firstview">
-                <!-- <div class="contents-wrapper"> -->
-                    
-                <!-- </div> -->
-                <!-- <div class="slideshow">
-                    <div class="slider">
-                        <div class="item"><img src="img/bg_slide1.png"></div>
-                        <div class="item"><img src="img/bg_slide2.png"></div>
-                        <div class="item"><img src="img/bg_slide1.png"></div>
-                        <div class="item"><img src="img04.jpg"></div>
-                        <div class="item"><img src="img05.jpg"></div>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="slideshow">
-                    <ul class="slider">
-                        <li class="slider-item slider-item01"></li>
-                        <li class="slider-item slider-item02"></li>
-                        <li class="slider-item slider-item03"></li>
-                    </ul>
-                </div> -->
+            <div class="slider-area">
+                <div class="slider-item">
+                    <img src="img/works/kiraku/visual1.png" width="100%" alt="">
+                </div>
+                <div class="slider-item">
+                    <img src="img/works/honey/visual2.png" width="100%" alt="">
+                </div>
+                <div class="slider-item">
+                    <img src="../img/works/halo/left3.png" width="100%" alt="">
+                </div>
             </div>
             
         </header>
@@ -131,32 +114,32 @@
                         <div class="contents-area">
                             <div class="contents-box">
                                 <div class="mask">
-                                    <img src="img/mockup/sinnkyuu.png" width="100%" alt="">
+                                    <img src="img/works/cover/kiraku.png" width="100%" alt="">
                                 </div>
                             </div>
                             <div class="contents-box">
                                 <div class="mask">
-                                    <img src="img/mockup/sinnkyuu.png" width="100%" alt="">
+                                    <img src="img/works/cover/honey.png" width="100%" alt="">
                                 </div>
                             </div>
                             <div class="contents-box">
                                 <div class="mask">
-                                    <img src="img/mockup/sinnkyuu.png" width="100%" alt="">
+                                    <img src="img/works/cover/kobepasture.png" width="100%" alt="">
                                 </div>
                             </div>
                             <div class="contents-box">
                                 <div class="mask">
-                                    <img src="img/mockup/sinnkyuu.png" width="100%" alt="">
+                                    <img src="img/works/addhand/visual1.png" width="100%" alt="">
                                 </div>
                             </div>
                             <div class="contents-box">
                                 <div class="mask">
-                                    <img src="img/mockup/sinnkyuu.png" width="100%" alt="">
+                                    <img src="img/works/kokuyo/visual1.png" width="100%" alt="">
                                 </div>
                             </div>
                             <div class="contents-box">
                                 <div class="mask">
-                                    <img src="img/mockup/sinnkyuu.png" width="100%" alt="">
+                                    <img src="img/works/halo/visual1.png" width="100%" alt="">
                                 </div>
                             </div>
                         </div>
@@ -229,30 +212,6 @@
             $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
             $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスを除去
             $(".circle-bg").removeClass('circleactive');//丸背景のcircleactiveクラスを除去
-        });
-    </script>
-
-    <!-- スライドショー -->
-    <script>
-        $('.slider').slick({
-        autoplay: true,//自動的に動き出すか。初期値はfalse。
-        autoplaySpeed: 3000,//次のスライドに切り替わる待ち時間
-        speed:1000,//スライドの動きのスピード。初期値は300。
-        infinite: true,//スライドをループさせるかどうか。初期値はtrue。
-        slidesToShow: 1,//スライドを画面に3枚見せる
-        slidesToScroll: 1,//1回のスクロールで3枚の写真を移動して見せる
-        arrows: true,//左右の矢印あり
-        prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
-        nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
-        dots: true,//下部ドットナビゲーションの表示
-            pauseOnFocus: false,//フォーカスで一時停止を無効
-            pauseOnHover: false,//マウスホバーで一時停止を無効
-            pauseOnDotsHover: false,//ドットナビゲーションをマウスホバーで一時停止を無効
-        });
-    
-        //スマホ用：スライダーをタッチしても止めずにスライドをさせたい場合
-        $('.slider').on('touchmove', function(event, slick, currentSlide, nextSlide){
-            $('.slider').slick('slickPlay');
         });
     </script>
 

@@ -93,7 +93,7 @@ html body {
   display: block; /*クラスが付与されたら出現*/
 }
 #wrapper #g-nav ul {
-  opacity: 0; /*はじめは透過0*/
+  visibility: hidden;
   padding-left: 220px;
   bottom: 100px;
   position: absolute;
@@ -103,21 +103,21 @@ html body {
   padding-bottom: 50px;
 }
 #wrapper #g-nav.panelactive ul {
-  opacity: 1;
+  visibility: visible;
 }
 #wrapper #g-nav .panelactive ul li {
   animation-name: gnaviAnime;
   animation-duration: 1s;
   animation-delay: 0.2s; /*0.2 秒遅らせて出現*/
   animation-fill-mode: forwards;
-  opacity: 0;
+  visibility: hidden;
 }
 @keyframes gnaviAnime {
   0% {
-    opacity: 0;
+    visibility: hidden;
   }
   100% {
-    opacity: 1;
+    visibility: visible;
   }
 }
 #wrapper #g-nav .main-nav {

@@ -89,7 +89,7 @@ html body {
   display: block; /*クラスが付与されたら出現*/
 }
 #wrapper #g-nav ul {
-  opacity: 0; /*はじめは透過0*/
+  visibility: hidden;
   padding-left: 220px;
   bottom: 100px;
   /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
@@ -100,21 +100,21 @@ html body {
   padding-bottom: 50px;
 }
 #wrapper #g-nav.panelactive ul {
-  opacity: 1;
+  visibility: visible;
 }
 #wrapper #g-nav.panelactive ul li {
   animation-name: gnaviAnime;
   animation-duration: 1s;
   animation-delay: 0.2s; /*0.2 秒遅らせて出現*/
   animation-fill-mode: forwards;
-  opacity: 0;
+  visibility: hidden;
 }
 @keyframes gnaviAnime {
   0% {
-    opacity: 0;
+    visibility: hidden;
   }
   100% {
-    opacity: 1;
+    visibility: visible;
   }
 }
 #wrapper #g-nav .main-nav {
@@ -153,18 +153,63 @@ html body {
   height: 100vh;
   margin: 0 0 0 auto;
   position: relative;
-  /*　スライド画像　*/
-  /*ドットナビゲーションの設定*/
+  display: flex;
 }
-#wrapper #header .pare {
-  width: 100%;
-  position: absolute;
-}
-#wrapper #header .pare .box {
-  width: 38%;
+#wrapper #header .slider-area {
+  position: relative;
+  width: 60%;
   height: 100vh;
+  background: #fff;
+}
+#wrapper #header .slider-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  animation: slideShow 30s linear infinite 0s;
+}
+#wrapper #header .slider-item:nth-child(2) {
+  animation-delay: 10s;
+}
+#wrapper #header .slider-item:nth-child(3) {
+  animation-delay: 20s;
+}
+#wrapper #header .slider-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#wrapper #header .mask {
+  width: 100%;
+  height: 100%;
+  position: relative;
   overflow: hidden;
-  margin: 0 0 0 auto;
+}
+#wrapper #header .mask img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #wrapper #header .Title {
   display: flex;
@@ -172,7 +217,6 @@ html body {
   height: 100vh;
   padding: 0px 100px;
   align-items: center;
-  z-index: 50;
   background-color: var(--bg-color);
 }
 #wrapper #header .Title h1 {
@@ -182,55 +226,10 @@ html body {
   font-weight: bold;
   letter-spacing: 0.15em;
 }
-#wrapper #header .slideshow {
-  position: relative;
-  z-index: 1;
-  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
-  height: 100vh; /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
-}
-#wrapper #header .slider-item01 {
-  background: url(../img/bg_slide1.png,);
-}
-#wrapper #header .slider-item02 {
-  background: url(../img/bg_slide2.png);
-}
-#wrapper #header .slider-item03 {
-  background: url(../img/bg_slide1.png);
-}
-#wrapper #header .slider-item {
-  width: 550px;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center; /*背景画像の位置を中央に*/
-  background-size: cover; /*背景画像が.slider-item全体を覆い表示*/
-}
-#wrapper #header .slick-dots {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  margin: -50px 0 0 0;
-}
-#wrapper #header .slick-dots li {
-  display: inline-block;
-  margin: 0 5px;
-}
-#wrapper #header .slick-dots button {
-  color: transparent;
-  outline: none;
-  width: 8px; /*ドットボタンのサイズ*/
-  height: 8px; /*ドットボタンのサイズ*/
-  display: block;
-  border-radius: 50%;
-  background: #ccc; /*ドットボタンの色*/
-}
-#wrapper #header .slick-dots .slick-active button {
-  background: #333; /*ドットボタンの現在地表示の色*/
-}
 #wrapper #main {
   width: calc(100vw - 120px);
   height: auto;
   margin: 0 0 0 auto;
-  position: relative;
   z-index: 100;
   padding: 350px 0px 100px;
 }
@@ -318,6 +317,7 @@ html body {
   gap: 5px;
   border-radius: 10px;
   background: var(--accent-color);
+  transition-duration: 0.2s;
 }
 #wrapper #main section .btn .btn-txt {
   color: var(--font-color2);
@@ -332,6 +332,10 @@ html body {
   width: 24px;
   height: 24px;
 }
+#wrapper #main section .btn:hover {
+  opacity: 0.5;
+  transition-duration: 0.2s;
+}
 #wrapper #main section .page-jump {
   display: flex;
   width: 290px;
@@ -342,6 +346,7 @@ html body {
   gap: 16px;
   border-radius: 25px 25px 25px 0px;
   background: var(--accent-color);
+  transition-duration: 0.2s;
 }
 #wrapper #main section .page-jump img {
   width: 100px;
@@ -367,6 +372,10 @@ html body {
 #wrapper #main section .page-jump .btn-a img {
   width: 24px;
   height: 24px;
+}
+#wrapper #main section .page-jump:hover {
+  opacity: 0.5;
+  transition-duration: 0.2s;
 }
 #wrapper #footer {
   width: calc(100% - 120px);
