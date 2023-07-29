@@ -27,6 +27,29 @@ html body {
   letter-spacing: 0.15em;
   background: var(--bg-color);
 }
+html body a, html body button {
+  cursor: none;
+}
+html body .cursor {
+  position: fixed;
+  /*丸の大きさと色の指定*/
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: -20px;
+  background: #C7B29F;
+  mix-blend-mode: diffelence;
+  opacity: 0.5;
+  border-radius: 50%;
+  z-index: 30000; /*一番手前に来るように*/
+  pointer-events: none; /*クリックできなくなるのを防ぐため。noneで対応*/
+  transition: width 1s, height 1s, top 1s, left 1s;
+  transform: translate(0, 0);
+  /*aタグにホバーした時に見た目変化*/
+}
+html body .cursor .cursor.cursor--hover {
+  transform: scale(3);
+}
 
 #wrapper {
   width: 100%;

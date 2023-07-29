@@ -33,6 +33,33 @@ html {
         font-size: 1.6rem;
         letter-spacing: 0.15em;
         background: var(--bg-color);
+        a, button {
+            cursor: none;
+        }
+        
+        .cursor {
+            position: fixed;
+        
+            /*丸の大きさと色の指定*/
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            left: -20px;
+            background: #C7B29F;
+            mix-blend-mode: diffelence;
+            opacity: .5;
+            border-radius: 50%;
+        
+            z-index: 30000;/*一番手前に来るように*/
+            pointer-events: none;/*クリックできなくなるのを防ぐため。noneで対応*/
+            transition: width 1s, height 1s, top 1s, left 1s;
+            transform: translate(0, 0);
+            // opacity: 0;
+            /*aタグにホバーした時に見た目変化*/
+            .cursor.cursor--hover {
+                transform: scale(3);
+            }
+        }
     }
 }
 

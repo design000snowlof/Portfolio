@@ -19,13 +19,38 @@
 
 html {
   font-size: 10px;
-  font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans" "Meiryo", "sans-serif";
+  font-family: "Helvetica Neue", "Arial", "Noto Sans JP" "Hiragino Kaku Gothic ProN", "Hiragino Sans" "Meiryo", "sans-serif";
   color: var(--font-color1);
 }
 html body {
+  position: relative;
+  cursor: none;
   font-size: 1.6rem;
   letter-spacing: 0.15em;
   background: var(--bg-color);
+}
+html body a, html body button {
+  cursor: none;
+}
+html body .cursor {
+  position: fixed;
+  /*丸の大きさと色の指定*/
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: -20px;
+  background: #C7B29F;
+  mix-blend-mode: diffelence;
+  opacity: 0.5;
+  border-radius: 50%;
+  z-index: 30000; /*一番手前に来るように*/
+  pointer-events: none; /*クリックできなくなるのを防ぐため。noneで対応*/
+  transition: width 1s, height 1s, top 1s, left 1s;
+  transform: translate(0, 0);
+  /*aタグにホバーした時に見た目変化*/
+}
+html body .cursor .cursor.cursor--hover {
+  transform: scale(3);
 }
 
 #wrapper {
