@@ -27,6 +27,7 @@ html body {
   letter-spacing: 0.15em;
   font-weight: bold;
   background: var(--bg-color);
+  cursor: none;
 }
 html body a, html body button {
   cursor: none;
