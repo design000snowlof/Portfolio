@@ -321,24 +321,9 @@ html {
             font-weight: bold;
         }
         button:hover, .button:hover {
-            background:var(--bg-colo50);
-            color: var(--accent-color);
-        }
-        
-        /* media queries */
-        @media (max-width: 700px) {
-            label.error {
-                width: 90%;
-            }
-            input, textarea {
-                width: 90%;
-            }
-            button {
-                width:90%;
-            }
-            body {
-                padding-top:10px;
-            }  
+            opacity: .5;
+            // background:var(--bg-colo50);
+            // color: var(--accent-color);
         }
     }
 

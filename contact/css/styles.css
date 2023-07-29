@@ -209,7 +209,6 @@ html body .cursor .cursor.cursor--hover {
   height: auto;
   margin: 0 0 0 auto;
   padding: 150px 0px;
-  /* media queries */
 }
 #wrapper #main h2 {
   color: var(--font-color4);
@@ -276,22 +275,7 @@ html body .cursor .cursor.cursor--hover {
   font-weight: bold;
 }
 #wrapper #main button:hover, #wrapper #main .button:hover {
-  background: var(--bg-colo50);
-  color: var(--accent-color);
-}
-@media (max-width: 700px) {
-  #wrapper #main label.error {
-    width: 90%;
-  }
-  #wrapper #main input, #wrapper #main textarea {
-    width: 90%;
-  }
-  #wrapper #main button {
-    width: 90%;
-  }
-  #wrapper #main body {
-    padding-top: 10px;
-  }
+  opacity: 0.5;
 }
 #wrapper #footer {
   width: calc(100% - 120px);
