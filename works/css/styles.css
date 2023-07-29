@@ -198,6 +198,11 @@ html body {
   gap: 16px;
   border-radius: 25px 25px 25px 0px;
   background: var(--accent-color);
+  transition-duration: 0.5s;
+}
+#wrapper #header .works-menu .menu-box:hover {
+  opacity: 0.5;
+  transition-duration: 0.5s;
 }
 #wrapper #header .works-menu .menu-box img {
   width: 100px;
@@ -264,12 +269,12 @@ html body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;
 }
 #wrapper #main #web .contents-area .contents-box .mask img:hover, #wrapper #main #graphics .contents-area .contents-box .mask img:hover, #wrapper #main #others .contents-area .contents-box .mask img:hover {
   opacity: 0.6;
   transition: 0.3s linear;
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;
 }
 #wrapper #main #web .contents-area .contents-box .work-name, #wrapper #main #graphics .contents-area .contents-box .work-name, #wrapper #main #others .contents-area .contents-box .work-name {
   display: flex;

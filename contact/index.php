@@ -83,54 +83,32 @@
                 <h2>お気軽にお問い合わせください。<br> お問い合わせ内容を確認した後、
                     <br> お返事をお送りいたします。
                 </h2>
-                <!-- <form action="">
+                <div id="container">
+                    <form action="./new.php" method="post">
 
-                    <input type="text" placeholder="お名前" name="name" required>
-                    
-                    <input type="email" placeholder="メールアドレス" name="email" required>
-                    
-                    <textarea placeholder="お問い合わせ内容" name="message" required></textarea>
-                    
-                    <input type="submit" value="送信">
-                    
-                </form> -->
-                <form action="./new.php" method="post">
-                    <input type="text" name="name">
-                    <?php if (isset($_SESSION['error_name'])) : ?>
-                        <?php unset($_SESSION['error_name']); ?>
-                        <p>名前を入力してください。</p>
-                    <?php endif; ?>
+                        <?php if (isset($_SESSION['error_name'])) : ?>
+                            <?php unset($_SESSION['error_name']); ?>
+                            <p>お名前を入力してください。</p>
+                        <?php endif; ?>
+                        <input type="text" name="name" placeholder="お名前">
+                        
+                        <?php if (isset($_SESSION['error_email'])) : ?>
+                            <?php unset($_SESSION['error_email']); ?>
+                            <p>メールアドレスを入力してください。</p>
+                        <?php endif; ?>
+                        <input type="text" name="email" placeholder="メールアドレス">
 
-                    <input type="text" name="email">
-                    <?php if (isset($_SESSION['error_email'])) : ?>
-                        <?php unset($_SESSION['error_email']); ?>
-                        <p>メールアドレスを入力してください。</p>
-                    <?php endif; ?>
-                    <textarea type="text" name="message"></textarea>
-                    <?php if (isset($_SESSION['error_message'])) : ?>
-                        <?php unset($_SESSION['error_message']); ?>
-                        <p>お問い合わせ内容を入力してください。</p>
-                    <?php endif; ?>
-
-                    <button id="submit" type="submit">
-                        送信
-                    </button>
-                </form>
-
-                <form id="contact">
-                    <div class="container">
-                        <!-- <div class="head"> -->
-                        <!-- <h2>Say Hello</h2> -->
-                        <!-- </div> -->
-                        <input type="text" name="name" placeholder="お名前" /><br />
-                        <input type="email" name="email" placeholder="メールアドレス" /><br />
-                        <textarea type="text" name="message" placeholder="お問い合わせ内容"></textarea><br />
-                        <div class="message">Message Sent</div>
+                        <?php if (isset($_SESSION['error_message'])) : ?>
+                            <?php unset($_SESSION['error_message']); ?>
+                            <p>お問い合わせ内容を入力してください。</p>
+                        <?php endif; ?>
+                        <textarea type="text" name="message" placeholder="お問い合わせ内容"></textarea>
+                        
                         <button id="submit" type="submit">
-                        送信
-                      </button>
-                    </div>
-                </form>
+                            送信
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -177,37 +155,6 @@
             $(".circle-bg").removeClass('circleactive'); //丸背景のcircleactiveクラスを除去
         });
     </script>
-
-    <script>
-        // When the browser is ready...
-        $(function() {
-            // validate
-            $("#contact").validate({
-                // Set the validation rules
-                rules: {
-                    name: "required",
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    message: "required",
-                },
-                // Specify the validation error messages
-                messages: {
-                    name: "Please enter your name",
-                    email: "Please enter a valid email address",
-                    message: "Please enter a message",
-                },
-                // submit handler
-                submitHandler: function(form) {
-                    //form.submit();
-                    $(".message").show();
-                    $(".message").fadeOut(4500);
-                }
-            });
-        });
-    </script>
-
 
 </body>
 

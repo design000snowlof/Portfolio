@@ -19,7 +19,7 @@
 
 html {
   font-size: 10px;
-  font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans" "Meiryo", "sans-serif";
+  font-family: "Helvetica Neue", "Arial", "Noto Sans JP" "Hiragino Kaku Gothic ProN", "Hiragino Sans" "Meiryo", "sans-serif";
   color: var(--font-color1);
 }
 html body {
@@ -197,34 +197,31 @@ html body {
   letter-spacing: 0.15em;
   margin-bottom: 100px;
 }
-#wrapper #main .container {
+#wrapper #main #container {
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 6px;
+  align-items: center;
 }
-#wrapper #main input {
-  margin-bottom: 40px;
+#wrapper #main p {
+  color: #d89c9c;
+  margin-bottom: 10px;
+  font-family: Noto Sans JP;
 }
 #wrapper #main textarea {
   height: 300px;
-  margin-bottom: 20px;
-}
-#wrapper #main input:first-of-type {
-  margin-top: 20px;
 }
 #wrapper #main input, #wrapper #main textarea {
-  font-size: 1.6rem;
+  width: 100%;
   padding: 30px 50px;
+  margin-bottom: 40px;
+  background: var(--bg-color50);
+  font-size: 1.6rem;
   font-family: Noto Sans JP;
   letter-spacing: 0.15em;
-  border: 1px solid var(--bg-color50);
-  background: var(--bg-color50);
   border-radius: 10px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  box-sizing: border-box;
-  width: 100%;
 }
 #wrapper #main ::-webkit-input-placeholder {
   color: var(--font-color4);
@@ -239,36 +236,24 @@ html body {
   color: var(--font-color4);
 }
 #wrapper #main button {
-  margin-top: 50px;
-  margin-left: 43%;
+  width: 120px;
+  height: 55px;
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--accent-color);
-  padding: 20px 30px;
   border-radius: 10px;
-  border: 1px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   transition: 0.5s;
-  display: inline-block;
-  cursor: pointer;
-  width: 15%;
   text-align: center;
   color: #fff;
   letter-spacing: 0.15em;
   font-weight: bold;
 }
 #wrapper #main button:hover, #wrapper #main .button:hover {
-  background: var(--font-color2);
+  background: var(--bg-colo50);
   color: var(--accent-color);
-}
-#wrapper #main label.error {
-  font-family: "Source Sans Pro", arial, sans-serif;
-  font-size: 1em;
-  display: block;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #d89c9c;
-  width: 80%;
-  margin: auto;
-  color: #FAFAFA;
-  border-radius: 6px;
 }
 @media (max-width: 700px) {
   #wrapper #main label.error {
@@ -283,18 +268,6 @@ html body {
   #wrapper #main body {
     padding-top: 10px;
   }
-}
-#wrapper #main .message {
-  font-family: Noto Sans JP;
-  font-size: 1.1em;
-  display: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #2ABCA7;
-  width: 80%;
-  margin: auto;
-  color: #FAFAFA;
-  border-radius: 6px;
 }
 #wrapper #footer {
   width: calc(100% - 120px);

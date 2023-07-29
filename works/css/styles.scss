@@ -229,6 +229,11 @@ html {
 
                 border-radius: 25px 25px 25px 0px;
                 background: var(--accent-color);
+                transition-duration: .5s;
+                &:hover {
+                    opacity: .5;
+                    transition-duration: .5s;
+                }
                 img {
                     width: 100px;
                 }
@@ -248,6 +253,7 @@ html {
                     }
                 }
             }
+            
         }
     }
 
@@ -297,11 +303,11 @@ html {
                             -webkit-transform: translate(-50%, -50%);
                             -ms-transform: translate(-50%, -50%);
                             transform: translate(-50%, -50%);
-                            transition-duration: .2s;
+                            transition-duration: .5s;
                             &:hover {
                                 opacity: .6;
                                 transition: .3s linear;
-                                transition-duration: .2s;
+                                transition-duration: .5s;
                                 // animation: images_link .3s;
                             }
                             // @keyframes images_link {

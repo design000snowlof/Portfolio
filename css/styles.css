@@ -308,7 +308,7 @@ html body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#wrapper #main section .btn {
+#wrapper #main section button {
   display: flex;
   height: 50px;
   padding: 0px 35px;
@@ -316,25 +316,19 @@ html body {
   align-items: center;
   gap: 5px;
   border-radius: 10px;
+  border: 2px solid var(--accent-color);
   background: var(--accent-color);
-  transition-duration: 0.2s;
-}
-#wrapper #main section .btn .btn-txt {
-  color: var(--font-color2);
-  text-align: center;
-  font-family: Helvetica Neue;
-  font-size: 1.6rem;
-  font-weight: bold;
-  line-height: 26px;
+  color: #fff;
   letter-spacing: 0.15em;
+  font-weight: bold;
+  transition-duration: 0.5s;
 }
-#wrapper #main section .btn img {
+#wrapper #main section button img {
   width: 24px;
   height: 24px;
 }
-#wrapper #main section .btn:hover {
+#wrapper #main section button:hover, #wrapper #main section .button:hover {
   opacity: 0.5;
-  transition-duration: 0.2s;
 }
 #wrapper #main section .page-jump {
   display: flex;
@@ -346,7 +340,7 @@ html body {
   gap: 16px;
   border-radius: 25px 25px 25px 0px;
   background: var(--accent-color);
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;
 }
 #wrapper #main section .page-jump img {
   width: 100px;
@@ -375,7 +369,7 @@ html body {
 }
 #wrapper #main section .page-jump:hover {
   opacity: 0.5;
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;
 }
 #wrapper #footer {
   width: calc(100% - 120px);

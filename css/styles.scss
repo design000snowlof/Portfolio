@@ -354,7 +354,8 @@ html {
                     }
                 }
             }
-            .btn {
+            
+            button {
                 display: flex;
                 height: 50px;
                 padding: 0px 35px;
@@ -362,27 +363,23 @@ html {
                 align-items: center;
                 gap: 5px;
                 border-radius: 10px;
+                border: 2px solid var(--accent-color);
                 background: var(--accent-color);
-                transition-duration: .2s;
-                .btn-txt {
-                    color: var(--font-color2);
-                    text-align: center;
-                    font-family: Helvetica Neue;
-                    font-size: 1.6rem;
-                    font-weight: bold;
-                    line-height: 26px;
-                    letter-spacing: 0.15em;
-                }
+                color:#fff;
+                letter-spacing: 0.15em;
+                font-weight: bold;
+                transition-duration: .5s;
                 img {
                     width: 24px;
                     height: 24px;
                 }
-                &:hover {
-                    opacity: .5;
-                    transition-duration: .2s;
-                }
             }
-            
+            button:hover, .button:hover {
+                // background:var(--bg-colo50);
+                // color: var(--accent-color);
+                opacity: .5;
+            }
+
             .page-jump {
                 display: flex;
                 width: 290px;
@@ -393,7 +390,7 @@ html {
                 gap: 16px;
                 border-radius: 25px 25px 25px 0px;
                 background: var(--accent-color);
-                transition-duration: .2s;
+                transition-duration: .5s;
                 img {
                     width: 100px;
                 }
@@ -422,7 +419,7 @@ html {
                 }
                 &:hover {
                     opacity: .5;
-                    transition-duration: .2s;
+                    transition-duration: .5s;
                 }
             }
         }

@@ -23,6 +23,7 @@ html {
     font-family:
         "Helvetica Neue",
         "Arial",
+        "Noto Sans JP"
         "Hiragino Kaku Gothic ProN",
         "Hiragino Sans"
         "Meiryo",
@@ -228,46 +229,38 @@ html {
             letter-spacing: 0.15em;
             margin-bottom: 100px;
         }
-        .container {
+        #container {
             max-width:800px;
             margin: 0 auto;
-            
-            -webkit-border-radius:6px;
-            -moz-border-radius:6px;
-            border-radius:6px;
-            
+            align-items: center;
         }
-        
-        input {
-            margin-bottom:40px;
+
+        p {
+            color:#d89c9c;
+            margin-bottom: 10px;
+            font-family: Noto Sans JP;
         }
+
         textarea {
             height: 300px;
-            margin-bottom:20px;
         }
-        input:first-of-type {
-            margin-top:20px;
-        }
+        
         input, textarea {
-        font-size: 1.6rem;
-        padding: 30px 50px;
-        font-family: Noto Sans JP;
-        letter-spacing: 0.15em;
-        border: 1px solid var(--bg-color50);
-        background: var(--bg-color50);
-        // color:#FAFAFA;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 10px;
-        -moz-background-clip: padding;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        width: 100%;
-        // max-width: 800px;
+            width: 100%;
+            padding: 30px 50px;
+            margin-bottom: 40px;
+            background: var(--bg-color50);
+            font-size: 1.6rem;
+            font-family: Noto Sans JP;
+            letter-spacing: 0.15em;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
         }
+
         ::-webkit-input-placeholder {
             color: var(--font-color4);
         }
@@ -281,71 +274,43 @@ html {
             color: var(--font-color4);  
         }
         button {
-        margin-top:50px;
-        margin-left: 43%;
-        // margin-bottom:25px;
-        background-color: var(--accent-color);
-        padding: 20px 30px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
-        border-radius: 10px;
-        border: 1px solid var(--accent-color);
-        -webkit-transition: .5s;
-        transition: .5s;
-        display: inline-block;
-        cursor: pointer;
-        width:15%;
-        text-align: center;
-        color:#fff;
-        letter-spacing: 0.15em;
-        font-weight: bold;
+            width: 120px;
+            height: 55px;
+            margin-top:30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: var(--accent-color);
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            -webkit-transition: .5s;
+            transition: .5s;
+            text-align: center;
+            color:#fff;
+            letter-spacing: 0.15em;
+            font-weight: bold;
         }
         button:hover, .button:hover {
-        background:var(--font-color2);
-        color: var(--accent-color);
+            background:var(--bg-colo50);
+            color: var(--accent-color);
         }
-        label.error {
-            font-family:'Source Sans Pro',arial,sans-serif;
-            font-size:1em;
-            display:block;
-            padding-top:10px;
-            padding-bottom:10px;
-            background-color:#d89c9c;
-            width: 80%;
-            margin:auto;
-            color: #FAFAFA;
-            -webkit-border-radius:6px;
-            -moz-border-radius:6px;
-            border-radius:6px;
-        }
+        
         /* media queries */
         @media (max-width: 700px) {
-        label.error {
-            width: 90%;
-        }
-        input, textarea {
-            width: 90%;
-        }
-        button {
-            width:90%;
-        }
-        body {
-            padding-top:10px;
-        }  
-        }
-        .message {
-            font-family: Noto Sans JP;
-            font-size:1.1em;
-            display:none;
-            padding-top:10px;
-            padding-bottom:10px;
-            background-color:#2ABCA7;
-            width: 80%;
-            margin:auto;
-            color: #FAFAFA;
-            -webkit-border-radius:6px;
-            -moz-border-radius:6px;
-            border-radius:6px;
+            label.error {
+                width: 90%;
+            }
+            input, textarea {
+                width: 90%;
+            }
+            button {
+                width:90%;
+            }
+            body {
+                padding-top:10px;
+            }  
         }
     }
 
