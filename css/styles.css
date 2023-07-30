@@ -243,6 +243,7 @@ html body .cursor .cursor.cursor--hover {
   padding: 0px 100px;
   align-items: center;
   background-color: var(--bg-color);
+  /* アニメーションで傾斜がついている文字列を水平に戻す*/
 }
 #wrapper #header .Title h1 {
   font-family: "Helvetica Neue", sans-serif;
@@ -250,6 +251,19 @@ html body .cursor .cursor.cursor--hover {
   font-size: 5.8rem;
   font-weight: bold;
   letter-spacing: 0.15em;
+}
+#wrapper #header .Title span.smoothText {
+  overflow: hidden;
+  display: block;
+}
+#wrapper #header .Title span.smoothTextTrigger {
+  transition: 0.8s ease-in-out;
+  transform: translate3d(0, 100%, 0) skewY(12deg);
+  transform-origin: left;
+  display: block;
+}
+#wrapper #header .Title span.smoothTextTrigger.smoothTextAppear {
+  transform: translate3d(0, 0, 0) skewY(0);
 }
 #wrapper #main {
   width: calc(100vw - 120px);

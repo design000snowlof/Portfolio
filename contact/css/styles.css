@@ -273,6 +273,7 @@ html body .cursor .cursor.cursor--hover {
   color: #fff;
   letter-spacing: 0.15em;
   font-weight: bold;
+  cursor: none;
 }
 #wrapper #main button:hover, #wrapper #main .button:hover {
   opacity: 0.5;

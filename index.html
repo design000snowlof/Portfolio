@@ -73,7 +73,10 @@
 
         <header id="header">
             <div class="Title">
-                <h1>SAYUKI’s<br>PORTFOLIO.</h1>
+                <h1>
+                    <span class="smoothText"><span class="smoothTextTrigger">SAYUKI’s<br></span></span>
+                    <span class="smoothText"><span class="smoothTextTrigger">PORTFOLIO.</span></span>
+                </h1>
             </div>
             <div class="slider-area">
                 <div class="slider-item">
@@ -242,6 +245,28 @@
                 cursor.classList.remove('cursor--hover');   
             });
         }
+    </script>
+
+    <!-- Title文字アニメーション -->
+    <script>
+        // smoothTriggerにsmoothTextAppearというクラス名を付ける定義
+        function SmoothTextAnime() {
+            $('.smoothTextTrigger').each(function(){ //smoothTextTriggerというクラス名が
+                var elemPos = $(this).offset().top-50;//要素より、50px上の
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll >= elemPos - windowHeight){
+                $(this).addClass('smoothTextAppear');// 画面内に入ったらsmoothTextAppearというクラス名を追記
+                }else{
+                $(this).removeClass('smoothTextAppear');// 画面外に出たらsmoothTextAppearというクラス名を外す
+                }
+                });	
+        }
+
+        // 画面が読み込まれたらすぐに動かす
+        $(window).on('load', function () {
+            SmoothTextAnime();/* アニメーション用の関数を呼ぶ*/
+        });
     </script>
 
     <!-- タイトル部分が拡大 -->
